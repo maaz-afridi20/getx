@@ -4,6 +4,7 @@ import 'package:getx_tutorials/getx_tuts/getting_uinqueid.dart';
 import 'package:getx_tutorials/getx_tuts/getx_namedroutes.dart';
 import 'package:getx_tutorials/getx_tuts/getx_routes.dart';
 import 'package:getx_tutorials/getx_tuts/reactive_state/student_ui.dart';
+import 'package:getx_tutorials/getx_tuts/worker/workers.dart';
 import 'package:getx_tutorials/home.dart';
 import 'package:getx_tutorials/nextscreen.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         // this is another way of getting values when we like the constructor.
         // this is the paramater.
       ],
-      home: GettinguniqueId(),
+      home: Workerss(),
     );
   }
 }
