@@ -61,6 +61,7 @@ class Home extends StatelessWidget {
               },
               child: const Text('goto next screen page'),
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),

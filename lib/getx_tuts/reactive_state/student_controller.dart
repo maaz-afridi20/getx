@@ -11,10 +11,10 @@ class MyContoller extends GetxController {
     sss.name.value = sss.name.value.toUpperCase();
   }
 
-  var count = 0;
+  RxInt count = 0.obs;
   void increment() {
     count++;
-    update();
+    // update();
   }
 
 // so we have the upadet below in this we have

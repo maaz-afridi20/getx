@@ -10,4 +10,9 @@ class MyController2 extends GetxController {
 
     await prefs.setInt('counter', counter);
   }
+
+  RxInt count = 0.obs;
+  void incrementCount() {
+    count++;
+  }
 }
