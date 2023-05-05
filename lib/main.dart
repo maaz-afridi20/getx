@@ -3,20 +3,41 @@ import 'package:get/get.dart';
 import 'package:getx_tutorials/getx_tuts/getting_uinqueid.dart';
 import 'package:getx_tutorials/getx_tuts/getx_namedroutes.dart';
 import 'package:getx_tutorials/getx_tuts/getx_routes.dart';
+import 'package:getx_tutorials/getx_tuts/internatiolization/language_change.dart';
+import 'package:getx_tutorials/getx_tuts/internatiolization/messages.dart';
+import 'package:getx_tutorials/getx_tuts/reactive_state/student_controller.dart';
 import 'package:getx_tutorials/getx_tuts/reactive_state/student_ui.dart';
 import 'package:getx_tutorials/getx_tuts/worker/workers.dart';
 import 'package:getx_tutorials/home.dart';
 import 'package:getx_tutorials/nextscreen.dart';
 
+import 'getx_tuts/dependencyInjectino/getput.dart';
+import 'getx_tuts/internatiolization/internatiolization.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  ChangeLanguage changeLanguage = Get.put(ChangeLanguage());
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations:
+          Messages(), // this message is that class that we have created ths is not prdefined
+      locale: const Locale('en', 'US'), // this will be the default language
+      // agr hm chahtay hain k jo b mobile ki language ho default wohi statring
+      // mein is app ki ho tu hm ye use karngay.
+      //
+      // locale: Get.deviceLocale, tu aisa krnay say jo b device ki default language ho to wo use ho jayegi
+
+      //
+      // so agar koi error ataa hai k wo language nai ho device mein tu hm fall back use kar saktay hain
+      fallbackLocale: const Locale('en', 'US'),
+      //
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       // unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
@@ -24,7 +45,7 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.zoom,
       // always the screen name must start with /
       getPages: [
-        GetPage(name: '/', page: () => const MyApp()),
+        GetPage(name: '/', page: () => MyApp()),
         GetPage(name: '/home', page: () => const Home()),
         GetPage(
             name: '/nextscreen',
@@ -38,7 +59,7 @@ class MyApp extends StatelessWidget {
         // this is another way of getting values when we like the constructor.
         // this is the paramater.
       ],
-      home: Workerss(),
+      home: GetPutt(),
     );
   }
 }

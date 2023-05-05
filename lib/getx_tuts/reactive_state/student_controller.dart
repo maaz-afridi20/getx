@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:getx_tutorials/getx_tuts/internatiolization/messages.dart';
 import 'package:getx_tutorials/getx_tuts/reactive_state/student.dart';
 
 // this is the same method for previous
