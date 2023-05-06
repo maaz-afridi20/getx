@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tutorials/getx_tuts/bindings/binding_controller.dart';
-import 'package:getx_tutorials/getx_tuts/getting_uinqueid.dart';
-import 'package:getx_tutorials/getx_tuts/getx_namedroutes.dart';
-import 'package:getx_tutorials/getx_tuts/getx_routes.dart';
+import 'package:getx_tutorials/getx_tuts/simplethings/getx_namedroutes.dart';
+
 import 'package:getx_tutorials/getx_tuts/internatiolization/language_change.dart';
 import 'package:getx_tutorials/getx_tuts/internatiolization/messages.dart';
-import 'package:getx_tutorials/getx_tuts/reactive_state/student_controller.dart';
-import 'package:getx_tutorials/getx_tuts/reactive_state/student_ui.dart';
-import 'package:getx_tutorials/getx_tuts/worker/workers.dart';
 import 'package:getx_tutorials/home.dart';
 import 'package:getx_tutorials/nextscreen.dart';
 
 import 'getx_tuts/bindings/bindings.dart';
-import 'getx_tuts/dependencyInjectino/getput.dart';
-import 'getx_tuts/internatiolization/internatiolization.dart';
+import 'getx_tuts/getApi/api_ui.dart';
 
 void main() {
   runApp(MyApp());
@@ -62,7 +57,7 @@ class MyApp extends StatelessWidget {
         // this is another way of getting values when we like the constructor.
         // this is the paramater.
       ],
-      home: Bindingss(),
+      home: ApiUi(),
     );
   }
 }
